@@ -1,11 +1,10 @@
-## My Project
+## App Analytics Hub
 
-TODO: Fill this README out!
+This library allows you to instrument your code with operational and behavioral metrics in your 
+mobile applications.
 
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
+This repository hosts libraries for Android, iOS and React-native platforms. Please refer the respective ReadMe files 
+for the integration steps and the API documentation.    
 
 ## License
 

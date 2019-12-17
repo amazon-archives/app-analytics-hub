@@ -1,0 +1,2 @@
+include ':sample', ':app-analytics-hub'
+rootProject.name = 'app-analytics-hub-android'
