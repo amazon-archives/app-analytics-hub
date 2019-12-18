@@ -22,6 +22,14 @@ Create AppAnalyticsHub instance.
 AppAnalyticsHub appAnalyticsHub = new AppAnalyticsHub();
 ```
 
+In App Analytics Hub, to record your events in different Analytic systems you would have to register 
+different implementations of `AnalyticsCollector` to a specific `EventType` in AppAnalyticsHub. The 
+`AnalyticsCollector` implementations will be responsible for understanding the App Analytics Hub 
+`Event` and create the respective Analytics system events. For example, if you want all your user 
+engagement events be registered in `AWS Pinpoint` you would register the `AWSPinpointAnalyticsCollector` 
+to the engagement event type and whenever an event with type user engagement is record in AppAnalyticsHub 
+the `AWSPinpointAnalyticsCollector` would be triggered to record the event in `AWSPinpoint`. 
+
 Set a default analytics collector so that every event you push will be recorded in this collector.
 ```java
 // this is optional.
@@ -33,14 +41,14 @@ Register a collector to App Analytics Hub
 appAnalyticsHub.registerCollector(collector);
 ```
 
-Add and remove a analytics collector to an event type. Adding a collector would also register the 
+Add and remove an analytics collector to an event type. Adding a collector would also register the 
 collector if it is not registered. 
 
 ```java
 // adding 
-appAnalyticsHub.addCollectorToEventType(eventType,collector);
+appAnalyticsHub.addCollectorToEventType(EventType.OPERATIONAL, operationalAnalyticsCollector);
 // removing
-appAnalyticsHub.removeCollectorFromEventType(eventType,collector);
+appAnalyticsHub.removeCollectorFromEventType(EventType.OPERATIONAL, operationalAnalyticsCollector);
 ```
 
 Recording an event:
@@ -49,27 +57,27 @@ Recording an event:
 appAnalyticsHub.recordEvent(sampleEvent);
 ```
 
-Create a event as follows:
+Create an event as follows:
 
 1.  Event Factory:
 
     ```java
     // Create an event Factory
-    EventFactory eventFactory = new EventFactory("source is optional","eventType is optional");
+    EventFactory eventFactory = new EventFactory("Authentication" // source is optional 
+                                                , EventType.ENGAGEMENT); // event type is optional
 
     // Using the event factory created, create multiple events with the same source and event type.
     Event sampleEvent = eventFactory.createEvent(
-        "sampleEvent", 
-        "source is optional",
-        "priority is optional",
-        "eventType is optional if it provided in the event factory"
+        "AuthSuccess", 
+        "Authentication",// source is optional and if not provided will reuse the value from EventFactory
+        Priority.HIGH, // priority is optional, will default to `NORMAL` if nothing is provided.
+        EventType.OPERATIONAL // eventType is optional if it is provided in the event factory"
     );
 
     Event sampleEvent1 = eventFactory.createEvent(
-        "sampleEvent1",
-        null,
-        null,
-        "eventType is optional if it provided in the event factory");
+        "AuthSuccess",
+        EventType.OPERATIONAL // eventType is optional if it is provided in the event factory"
+    );
     ```
 
     While creating an event using event factory `name` is a mandatory field, `source` & `priority` are optional and `eventType` is optional if it provided while creating the event factory.
@@ -80,10 +88,10 @@ Create a event as follows:
 
     ```java
     Event event = new Event(
-      "event name",
-      "source is optional",
-      "event type",
-      "priority is optional"
+      "AuthFailure",
+      "Authentication", // source is optional 
+      EventType.OPERATIONAL,
+      Priority.HIGH // priority is optional
     );
     ```
 
@@ -147,7 +155,10 @@ sampleEvent.incrementTimer("timer", 200.0);
 sampleEvent.removeTimer("timer");
 ```
 
-Timers needs functionalities of start and stop to get the value needed to be recorded by an event which are provided by `TimerMetric` object. Using TimerMetric object you can create a timer start and stop it multiple times and the record it associate this metric to a single event or multiple events.
+`TimersMetric` are objects that you can use to conveniently measure duration in your application. Like 
+a stop watch, they support two operations: `start` and `stop`. Once you have measured a duration in 
+your application using a `TimerMetric` object, you can use the `recordTimer` and `recordTimerInEvents` 
+operations to record it to one or many events, depending on your use-case.
 
 ```java
 TimerMetric timer = new TimerMetric("timermetric", parentEvent); // providing a parent event is optional but is advised.

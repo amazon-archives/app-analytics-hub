@@ -20,8 +20,8 @@ import androidx.annotation.Nullable;
  * </p>
  */
 public class TimerMetric {
-    private double startTime;
-    private double totalTime;
+    private long startTime;
+    private long totalTime;
     private String name;
     private Event parentEvent;
 
@@ -53,7 +53,7 @@ public class TimerMetric {
      */
     public void stopTimer() {
         if (startTime > 0) {
-            double sessionTime = System.currentTimeMillis() - startTime;
+            long sessionTime = System.currentTimeMillis() - startTime;
             totalTime += sessionTime;
             startTime = 0;
         } else {

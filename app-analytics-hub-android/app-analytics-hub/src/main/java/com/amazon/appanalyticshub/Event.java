@@ -18,6 +18,7 @@ import java.util.Map;
  * </p>
  */
 public class Event {
+
     /**
      * The name distinguishing this event.
      */
@@ -45,14 +46,17 @@ public class Event {
      * solutions accepts only strings.
      */
     private Map<String, String> data;
+
     /**
      * Variable to store all the counter metrics linked to this Event.
      */
     private Map<String, Double> counters;
+
     /**
      * Variable to store all the timer metrics linked to this Event.
      */
     private Map<String, Double> timers;
+
     /**
      * Variable to store all the custom metrics linked to this Event.
      */
