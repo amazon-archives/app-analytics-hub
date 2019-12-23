@@ -1,2 +1,2 @@
-include ':sample', ':app-analytics-hub'
+include ':sample', ':library'
 rootProject.name = 'app-analytics-hub-android'
