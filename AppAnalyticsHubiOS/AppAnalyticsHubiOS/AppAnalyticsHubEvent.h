@@ -63,10 +63,17 @@ NS_SWIFT_NAME(Event)
  @return New event instance.
  */
 - (instancetype)initWithName:(NSString *)name
-                      source:(NSString *)source
+                      source:(nullable NSString *)source
                         type:(AppAnalyticsHubEventType)type
                     priority:(AppAnalyticsHubEventPriority)priority;
-
+/**
+ Initializes a new event with the provided parameters.
+ 
+ @param name The name to distinguish this event.
+ @param type The type of event this is (e.g. operational, engagement, etc.)
+ @return New event instance.
+ */
+- (instancetype)initWithName:(NSString *)name type:(AppAnalyticsHubEventType)type;
 /**
  Adds data to this event.
 
@@ -123,23 +130,9 @@ NS_SWIFT_NAME(Event)
  Adds a timer to this event.
 
  @param key The key to distinguish this timer.
- */
-- (void)addTimerForKey:(NSString *)key;
-
-/**
- Adds a timer to this event.
-
- @param key The key to distinguish this timer.
  @param timeElapsed The total time already elapsed for this timer.
  */
 - (void)addTimerForKey:(NSString *)key timeElapsed:(NSNumber *)timeElapsed;
-
-/**
- Increments the previously added timer's elapsed time by the specified value.
-
- @param key The key of the counter to increment.
- */
-- (void)incrementTimerForKey:(NSString *)key;
 
 /**
  Increments the previously added timer's elapsed time by the specified value.

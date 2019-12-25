@@ -28,6 +28,10 @@ AppAnalyticsHubEventType const AppAnalyticsHubEventTypeEngagement = @"engagement
     return [self initWithName:name source:source type:type priority:AppAnalyticsHubEventPriorityNormal];
 }
 
+- (instancetype)initWithName:(NSString *)name type:(AppAnalyticsHubEventType)type {
+    return [self initWithName:name source:NULL type:type priority:AppAnalyticsHubEventPriorityNormal];
+}
+
 - (instancetype)initWithName:(NSString *)name
                       source:(NSString *)source
                         type:(AppAnalyticsHubEventType)type
@@ -107,16 +111,8 @@ AppAnalyticsHubEventType const AppAnalyticsHubEventTypeEngagement = @"engagement
     }
 }
 
-- (void)addTimerForKey:(NSString *)key {
-    [self addTimerForKey:key timeElapsed:@0.0];
-}
-
 - (void)addTimerForKey:(NSString *)key timeElapsed:(NSNumber *)timeElapsed {
     [self.actualTimers setObject:timeElapsed forKey:key];
-}
-
-- (void)incrementTimerForKey:(NSString *)key {
-    [self incrementTimerForKey:key by:@1.0];
 }
 
 - (void)incrementTimerForKey:(NSString *)key by:(NSNumber *)delta {
