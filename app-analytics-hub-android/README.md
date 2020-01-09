@@ -5,12 +5,20 @@ Android application.
 
 ### Usage:
 
-Add the latest version of AppAnalyticsHub Android library in your applications `build.gradle` file:
+Add Maven Central repository in project's `build.gradle` file:
+
+```gradle
+repositories {
+    mavenCentral()
+}
+```
+
+Add the latest version of AppAnalyticsHub Android library in your application's `build.gradle` file:
 
 ```gradle
 dependencies {
     ... 
-    implementation 'com.amazon.appanalyticshub:appanalyticshub:1.0.0'
+    implementation 'com.amazon.appanalyticshub:appanalyticshub:0.0.1'
     ...    
 }
 
