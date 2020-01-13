@@ -22,21 +22,35 @@ def isReleaseBuild() {
 }
 
 def getReleaseRepositoryUrl() {
-    return hasProperty('RELEASE_REPOSITORY_URL') ? RELEASE_REPOSITORY_URL
-            : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+    if (hasProperty('RELEASE_REPOSITORY_URL')) {
+        return RELEASE_REPOSITORY_URL
+    } else {
+        throw new GradleException('Release repository url is not present in gradle.properties')
+    }
 }
 
 def getSnapshotRepositoryUrl() {
-    return hasProperty('SNAPSHOT_REPOSITORY_URL') ? SNAPSHOT_REPOSITORY_URL
-            : "https://oss.sonatype.org/content/repositories/snapshots/"
+    if (hasProperty('SNAPSHOT_REPOSITORY_URL')) {
+        return SNAPSHOT_REPOSITORY_URL
+    } else {
+        throw new GradleException('Snapshot repository url is not present in gradle.properties')
+    }
 }
 
 def getRepositoryUsername() {
-    return hasProperty('NEXUS_USERNAME') ? NEXUS_USERNAME : ""
+    if (hasProperty('NEXUS_USERNAME')) {
+        return NEXUS_USERNAME
+    } else {
+        throw new GradleException('Username for authentication is not provided')
+    }
 }
 
 def getRepositoryPassword() {
-    return hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
+    if (hasProperty('NEXUS_PASSWORD')) {
+        return NEXUS_PASSWORD
+    } else {
+        throw new GradleException('Password for authentication is not provided')
+    }
 }
 
 afterEvaluate { project ->
@@ -80,6 +94,7 @@ afterEvaluate { project ->
                         developer {
                             id POM_DEVELOPER_ID
                             name POM_DEVELOPER_NAME
+                            organization POM_DEVELOPER_ORGANIZATION
                         }
                     }
                 }
@@ -92,14 +107,14 @@ afterEvaluate { project ->
         sign configurations.archives
     }
 
-    //task androidJavadocs(type: Javadoc) {
-    //source = android.sourceSets.main.allJava
-    //}
+    task androidJavadocs(type: Javadoc) {
+        source = android.sourceSets.main.java
+    }
 
-    //task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
-    //classifier = 'javadoc'
-    //from androidJavadocs.destinationDir
-    //}
+    task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+        classifier = 'javadoc'
+        from androidJavadocs.destinationDir
+    }
 
     task androidSourcesJar(type: Jar) {
         classifier = 'sources'
