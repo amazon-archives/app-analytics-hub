@@ -6,9 +6,9 @@
 //  Copyright © 2018 Lykhonis, Volodymyr. All rights reserved.
 //
 
-#import "AnalyticsHubTimerMetric.h"
+#import "AppAnalyticsHubTimerMetric.h"
 
-@interface AnalyticsHubTimerMetric ()
+@interface AppAnalyticsHubTimerMetric ()
 
 @property(nonatomic, nullable) NSDate * startTime;
 @property(nonatomic) NSTimeInterval totalTime;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation AnalyticsHubTimerMetric
+@implementation AppAnalyticsHubTimerMetric
 
 - (instancetype)initWithName:(NSString *)name parent:(AppAnalyticsHubEvent *)event {
     self = [super init];

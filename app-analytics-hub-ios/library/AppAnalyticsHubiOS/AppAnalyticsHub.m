@@ -10,7 +10,7 @@
 
 @interface AppAnalyticsHub ()
 
-@property(nonatomic, nonnull) NSMutableDictionary<NSString *, id<AnalyticsCollector>> * collectors;
+@property(nonatomic, nonnull) NSMutableDictionary<NSString *, id<AAHAnalyticsCollector>> * collectors;
 @property(nonatomic, nonnull) NSMutableDictionary<AppAnalyticsHubEventType, NSMutableSet<NSString *> *> * eventTypes;
 
 @end
@@ -47,19 +47,19 @@
     return [self interceptInstance:instance];
 }
 
-- (NSArray<id<AnalyticsCollector>> *)registeredCollectors {
+- (NSArray<id<AAHAnalyticsCollector>> *)registeredCollectors {
     return [NSArray arrayWithArray:self.collectors.allValues];
 }
 
-- (void)registerCollector:(id<AnalyticsCollector>)collector {
+- (void)registerCollector:(id<AAHAnalyticsCollector>)collector {
     [self.collectors setObject:collector forKey:collector.name];
 }
 
-- (void)unregisterCollector:(id<AnalyticsCollector>)collector {
+- (void)unregisterCollector:(id<AAHAnalyticsCollector>)collector {
     [self.collectors removeObjectForKey:collector.name];
 }
 
-- (void)addCollector:(id<AnalyticsCollector>)collector toEventType:(AppAnalyticsHubEventType)eventType {
+- (void)addCollector:(id<AAHAnalyticsCollector>)collector toEventType:(AppAnalyticsHubEventType)eventType {
     [self registerCollector:collector];
     NSMutableSet<NSString *> * collectors = [self.eventTypes objectForKey:eventType];
     if (collectors == nil) {
@@ -69,7 +69,7 @@
     [collectors addObject:collector.name];
 }
 
-- (void)removeCollector:(id<AnalyticsCollector>)collector fromEventType:(AppAnalyticsHubEventType)eventType {
+- (void)removeCollector:(id<AAHAnalyticsCollector>)collector fromEventType:(AppAnalyticsHubEventType)eventType {
     NSMutableSet<NSString *> * collectors = [self.eventTypes objectForKey:eventType];
     if (collectors == nil) {
         NSLog(@"Attempting to remove collector %@ from event type %@ when no such "
@@ -86,12 +86,12 @@
     [collectors removeObject:collector.name];
 }
 
-- (NSArray<id<AnalyticsCollector>> *)getCollectorsForEventType:(AppAnalyticsHubEventType)eventType {
-    NSMutableArray<id<AnalyticsCollector>> * collectors = [NSMutableArray array];
+- (NSArray<id<AAHAnalyticsCollector>> *)getCollectorsForEventType:(AppAnalyticsHubEventType)eventType {
+    NSMutableArray<id<AAHAnalyticsCollector>> * collectors = [NSMutableArray array];
     NSSet<NSString *> * collectorNames = [self.eventTypes objectForKey:eventType];
     if (collectorNames != nil) {
         for (NSString * name in collectorNames) {
-            id<AnalyticsCollector> collector = [self.collectors objectForKey:name];
+            id<AAHAnalyticsCollector> collector = [self.collectors objectForKey:name];
             if (collector != nil) {
                 [collectors addObject:collector];
             }
@@ -101,13 +101,13 @@
 }
 
 - (void)recordEvent:(AppAnalyticsHubEvent *)event {
-    NSArray<id<AnalyticsCollector>> * eventCollectors =
+    NSArray<id<AAHAnalyticsCollector>> * eventCollectors =
             [self getCollectorsForEventType:[event.type lowercaseString]];
-    NSMutableSet<id<AnalyticsCollector>> * collectors = [NSMutableSet setWithArray:eventCollectors];
+    NSMutableSet<id<AAHAnalyticsCollector>> * collectors = [NSMutableSet setWithArray:eventCollectors];
     if (self.defaultCollector != nil) {
         [collectors addObject:self.defaultCollector];
     }
-    for (id<AnalyticsCollector> collector in collectors) {
+    for (id<AAHAnalyticsCollector> collector in collectors) {
         [collector recordEvent:event];
     }
 }

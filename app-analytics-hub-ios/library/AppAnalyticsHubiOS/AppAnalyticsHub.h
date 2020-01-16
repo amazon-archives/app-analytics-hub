@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AnalyticsHub.h"
+#import "AAHAnalyticsHub.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AppAnalyticsHub : NSObject <AnalyticsHub>
+@interface AppAnalyticsHub : NSObject <AAHAnalyticsHub>
 
 /**
  Shared instance of the metrics.

@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  Basic timer class that measures elapsed time for processes.
  */
 NS_SWIFT_NAME(TimerMetric)
-@interface AnalyticsHubTimerMetric : NSObject
+@interface AppAnalyticsHubTimerMetric : NSObject
 
 /**
  Initializes this timer with the provided name.

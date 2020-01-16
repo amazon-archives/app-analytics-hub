@@ -16,6 +16,6 @@ FOUNDATION_EXPORT const unsigned char AppAnalyticsHubiOSVersionString[];
 
 #import "AppAnalyticsHub.h"
 #import "AppAnalyticsHubEvent.h"
-#import "AnalyticsHub.h"
-#import "AnalyticsCollector.h"
-#import "AnalyticsHubTimerMetric.h"
+#import "AAHAnalyticsHub.h"
+#import "AAHAnalyticsCollector.h"
+#import "AppAnalyticsHubTimerMetric.h"

@@ -8,23 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AnalyticsCollector.h"
+#import "AAHAnalyticsCollector.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 NS_SWIFT_NAME(AnalyticsHub)
-@protocol AnalyticsHub <NSObject>
+@protocol AAHAnalyticsHub <NSObject>
 
 /**
  The default metrics collector. The metrics manager will record to this metrics collector along with any others
  passed in.
  */
-@property(nonatomic, nullable) id<AnalyticsCollector> defaultCollector;
+@property(nonatomic, nullable) id<AAHAnalyticsCollector> defaultCollector;
 
 /**
  All of the registered collectors for this instance.
  */
-@property(nonatomic, readonly) NSArray<id<AnalyticsCollector>> * registeredCollectors;
+@property(nonatomic, readonly) NSArray<id<AAHAnalyticsCollector>> * registeredCollectors;
 
 /**
  Records all collectors for the provided event's event type to the provided event, as well as the default collector
@@ -40,7 +40,7 @@ NS_SWIFT_NAME(AnalyticsHub)
  @param collector The metrics collector to add.
  @param eventType The event type to add this metrics collector to.
  */
-- (void)addCollector:(id<AnalyticsCollector>)collector toEventType:(AppAnalyticsHubEventType)eventType;
+- (void)addCollector:(id<AAHAnalyticsCollector>)collector toEventType:(AppAnalyticsHubEventType)eventType;
 
 /**
  Removes a metric collector from the specified custom event type.
@@ -48,7 +48,7 @@ NS_SWIFT_NAME(AnalyticsHub)
  @param collector The metrics collector to remove.
  @param eventType The custom event type to remove this metrics collector from.
  */
-- (void)removeCollector:(id<AnalyticsCollector>)collector fromEventType:(AppAnalyticsHubEventType)eventType;
+- (void)removeCollector:(id<AAHAnalyticsCollector>)collector fromEventType:(AppAnalyticsHubEventType)eventType;
 
 /**
  Gets the collectors for the specified custom event type.
@@ -56,21 +56,21 @@ NS_SWIFT_NAME(AnalyticsHub)
  @param eventType The custom event type to retrieve collectors from.
  @return Collectors for the event type.
  */
-- (NSArray<id<AnalyticsCollector>> *)getCollectorsForEventType:(AppAnalyticsHubEventType)eventType;
+- (NSArray<id<AAHAnalyticsCollector>> *)getCollectorsForEventType:(AppAnalyticsHubEventType)eventType;
 
 /**
  Registers a collector to the metrics manager.
  
  @param collector The metrics collector to register.
  */
-- (void)registerCollector:(id<AnalyticsCollector>)collector;
+- (void)registerCollector:(id<AAHAnalyticsCollector>)collector;
 
 /**
  Unregister a collector from the metrics manager.
  
  @param collector The metrics collector to unregister.
  */
-- (void)unregisterCollector:(id<AnalyticsCollector>)collector;
+- (void)unregisterCollector:(id<AAHAnalyticsCollector>)collector;
 
 @end
 

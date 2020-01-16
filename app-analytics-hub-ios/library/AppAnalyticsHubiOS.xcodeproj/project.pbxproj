@@ -12,19 +12,19 @@
 		66A3AEE623966FE600F5A8EC /* libAppAnalyticsHubiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A3AED123966FCD00F5A8EC /* libAppAnalyticsHubiOS.a */; };
 		66A3AEF62396702A00F5A8EC /* AppAnalyticsHubEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A3AEEC2396702A00F5A8EC /* AppAnalyticsHubEvent.m */; };
 		66A3AEF72396702A00F5A8EC /* AppAnalyticsHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A3AEF22396702A00F5A8EC /* AppAnalyticsHub.m */; };
-		66A3AEF82396702A00F5A8EC /* AnalyticsHubTimerMetric.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A3AEF52396702A00F5A8EC /* AnalyticsHubTimerMetric.m */; };
-		66A3AEFC239672B200F5A8EC /* AnalyticsCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A3AEEE2396702A00F5A8EC /* AnalyticsCollector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		66A3AEFD239672B200F5A8EC /* AnalyticsHub.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A3AEF32396702A00F5A8EC /* AnalyticsHub.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		66A3AEFE239672B200F5A8EC /* AnalyticsHubTimerMetric.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A3AEF12396702A00F5A8EC /* AnalyticsHubTimerMetric.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66A3AEF82396702A00F5A8EC /* AppAnalyticsHubTimerMetric.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A3AEF52396702A00F5A8EC /* AppAnalyticsHubTimerMetric.m */; };
+		66A3AEFC239672B200F5A8EC /* AAHAnalyticsCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A3AEEE2396702A00F5A8EC /* AAHAnalyticsCollector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66A3AEFD239672B200F5A8EC /* AAHAnalyticsHub.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A3AEF32396702A00F5A8EC /* AAHAnalyticsHub.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66A3AEFE239672B200F5A8EC /* AppAnalyticsHubTimerMetric.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A3AEF12396702A00F5A8EC /* AppAnalyticsHubTimerMetric.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66A3AEFF239672B200F5A8EC /* AppAnalyticsHub.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A3AEF02396702A00F5A8EC /* AppAnalyticsHub.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66A3AF00239672B200F5A8EC /* AppAnalyticsHubEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A3AEEF2396702A00F5A8EC /* AppAnalyticsHubEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66A3AF01239672B200F5A8EC /* OCLint.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A3AEF42396702A00F5A8EC /* OCLint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66A3AF02239672B200F5A8EC /* AppAnalyticsHubiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A3AED423966FCD00F5A8EC /* AppAnalyticsHubiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		66A3AF692397C1FF00F5A8EC /* AnalyticsCollector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66A3AEEE2396702A00F5A8EC /* AnalyticsCollector.h */; };
-		66A3AF6A2397C21400F5A8EC /* AnalyticsHubTimerMetric.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66A3AEF12396702A00F5A8EC /* AnalyticsHubTimerMetric.h */; };
+		66A3AF692397C1FF00F5A8EC /* AAHAnalyticsCollector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66A3AEEE2396702A00F5A8EC /* AAHAnalyticsCollector.h */; };
+		66A3AF6A2397C21400F5A8EC /* AppAnalyticsHubTimerMetric.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66A3AEF12396702A00F5A8EC /* AppAnalyticsHubTimerMetric.h */; };
 		66A3AF6B2397C21400F5A8EC /* AppAnalyticsHub.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66A3AEF02396702A00F5A8EC /* AppAnalyticsHub.h */; };
 		66A3AF6C2397C21400F5A8EC /* AppAnalyticsHubEvent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66A3AEEF2396702A00F5A8EC /* AppAnalyticsHubEvent.h */; };
-		66A3AF6D2397C24200F5A8EC /* AnalyticsHub.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66A3AEF32396702A00F5A8EC /* AnalyticsHub.h */; };
+		66A3AF6D2397C24200F5A8EC /* AAHAnalyticsHub.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66A3AEF32396702A00F5A8EC /* AAHAnalyticsHub.h */; };
 		66A3AF6E2397C24600F5A8EC /* OCLint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66A3AEF42396702A00F5A8EC /* OCLint.h */; };
 /* End PBXBuildFile section */
 
@@ -46,11 +46,11 @@
 			dstSubfolderSpec = 16;
 			files = (
 				66A3AF6E2397C24600F5A8EC /* OCLint.h in CopyFiles */,
-				66A3AF6D2397C24200F5A8EC /* AnalyticsHub.h in CopyFiles */,
-				66A3AF6A2397C21400F5A8EC /* AnalyticsHubTimerMetric.h in CopyFiles */,
+				66A3AF6D2397C24200F5A8EC /* AAHAnalyticsHub.h in CopyFiles */,
+				66A3AF6A2397C21400F5A8EC /* AppAnalyticsHubTimerMetric.h in CopyFiles */,
 				66A3AF6B2397C21400F5A8EC /* AppAnalyticsHub.h in CopyFiles */,
 				66A3AF6C2397C21400F5A8EC /* AppAnalyticsHubEvent.h in CopyFiles */,
-				66A3AF692397C1FF00F5A8EC /* AnalyticsCollector.h in CopyFiles */,
+				66A3AF692397C1FF00F5A8EC /* AAHAnalyticsCollector.h in CopyFiles */,
 				66A3AED723966FCD00F5A8EC /* AppAnalyticsHubiOS.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,14 +64,14 @@
 		66A3AEE323966FE600F5A8EC /* AppAnalyticsHubiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppAnalyticsHubiOSTests.m; sourceTree = "<group>"; };
 		66A3AEE523966FE600F5A8EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66A3AEEC2396702A00F5A8EC /* AppAnalyticsHubEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppAnalyticsHubEvent.m; sourceTree = "<group>"; };
-		66A3AEEE2396702A00F5A8EC /* AnalyticsCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsCollector.h; sourceTree = "<group>"; };
+		66A3AEEE2396702A00F5A8EC /* AAHAnalyticsCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAHAnalyticsCollector.h; sourceTree = "<group>"; };
 		66A3AEEF2396702A00F5A8EC /* AppAnalyticsHubEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppAnalyticsHubEvent.h; sourceTree = "<group>"; };
 		66A3AEF02396702A00F5A8EC /* AppAnalyticsHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppAnalyticsHub.h; sourceTree = "<group>"; };
-		66A3AEF12396702A00F5A8EC /* AnalyticsHubTimerMetric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsHubTimerMetric.h; sourceTree = "<group>"; };
+		66A3AEF12396702A00F5A8EC /* AppAnalyticsHubTimerMetric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppAnalyticsHubTimerMetric.h; sourceTree = "<group>"; };
 		66A3AEF22396702A00F5A8EC /* AppAnalyticsHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppAnalyticsHub.m; sourceTree = "<group>"; };
-		66A3AEF32396702A00F5A8EC /* AnalyticsHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsHub.h; sourceTree = "<group>"; };
+		66A3AEF32396702A00F5A8EC /* AAHAnalyticsHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAHAnalyticsHub.h; sourceTree = "<group>"; };
 		66A3AEF42396702A00F5A8EC /* OCLint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLint.h; sourceTree = "<group>"; };
-		66A3AEF52396702A00F5A8EC /* AnalyticsHubTimerMetric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsHubTimerMetric.m; sourceTree = "<group>"; };
+		66A3AEF52396702A00F5A8EC /* AppAnalyticsHubTimerMetric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppAnalyticsHubTimerMetric.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +114,10 @@
 		66A3AED323966FCD00F5A8EC /* AppAnalyticsHubiOS */ = {
 			isa = PBXGroup;
 			children = (
-				66A3AEEE2396702A00F5A8EC /* AnalyticsCollector.h */,
-				66A3AEF32396702A00F5A8EC /* AnalyticsHub.h */,
-				66A3AEF12396702A00F5A8EC /* AnalyticsHubTimerMetric.h */,
-				66A3AEF52396702A00F5A8EC /* AnalyticsHubTimerMetric.m */,
+				66A3AEEE2396702A00F5A8EC /* AAHAnalyticsCollector.h */,
+				66A3AEF32396702A00F5A8EC /* AAHAnalyticsHub.h */,
+				66A3AEF12396702A00F5A8EC /* AppAnalyticsHubTimerMetric.h */,
+				66A3AEF52396702A00F5A8EC /* AppAnalyticsHubTimerMetric.m */,
 				66A3AEF02396702A00F5A8EC /* AppAnalyticsHub.h */,
 				66A3AEF22396702A00F5A8EC /* AppAnalyticsHub.m */,
 				66A3AEEF2396702A00F5A8EC /* AppAnalyticsHubEvent.h */,
@@ -144,9 +144,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66A3AEFC239672B200F5A8EC /* AnalyticsCollector.h in Headers */,
-				66A3AEFD239672B200F5A8EC /* AnalyticsHub.h in Headers */,
-				66A3AEFE239672B200F5A8EC /* AnalyticsHubTimerMetric.h in Headers */,
+				66A3AEFC239672B200F5A8EC /* AAHAnalyticsCollector.h in Headers */,
+				66A3AEFD239672B200F5A8EC /* AAHAnalyticsHub.h in Headers */,
+				66A3AEFE239672B200F5A8EC /* AppAnalyticsHubTimerMetric.h in Headers */,
 				66A3AEFF239672B200F5A8EC /* AppAnalyticsHub.h in Headers */,
 				66A3AF00239672B200F5A8EC /* AppAnalyticsHubEvent.h in Headers */,
 				66A3AF01239672B200F5A8EC /* OCLint.h in Headers */,
@@ -243,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66A3AEF82396702A00F5A8EC /* AnalyticsHubTimerMetric.m in Sources */,
+				66A3AEF82396702A00F5A8EC /* AppAnalyticsHubTimerMetric.m in Sources */,
 				66A3AEF72396702A00F5A8EC /* AppAnalyticsHub.m in Sources */,
 				66A3AEF62396702A00F5A8EC /* AppAnalyticsHubEvent.m in Sources */,
 			);

@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 NS_SWIFT_NAME(AnalyticsCollector)
-@protocol AnalyticsCollector <NSObject>
+@protocol AAHAnalyticsCollector <NSObject>
 
 @property(nonatomic, readonly) NSString * name;
 
