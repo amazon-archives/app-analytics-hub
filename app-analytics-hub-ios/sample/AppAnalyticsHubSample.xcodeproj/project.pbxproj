@@ -14,32 +14,7 @@
 		66A2ED2F23CC408D00117100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66A2ED2D23CC408D00117100 /* Main.storyboard */; };
 		66A2ED3123CC408E00117100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66A2ED3023CC408E00117100 /* Assets.xcassets */; };
 		66A2ED3423CC408E00117100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66A2ED3223CC408E00117100 /* LaunchScreen.storyboard */; };
-		66A2ED5123CC448E00117100 /* libAppAnalyticsHubiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A2ED4C23CC428400117100 /* libAppAnalyticsHubiOS.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		66A2ED4B23CC428400117100 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66A2ED4623CC428400117100 /* AppAnalyticsHubiOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 66A3AED123966FCD00F5A8EC;
-			remoteInfo = AppAnalyticsHubiOS;
-		};
-		66A2ED4D23CC428400117100 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66A2ED4623CC428400117100 /* AppAnalyticsHubiOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 66A3AEE123966FE600F5A8EC;
-			remoteInfo = AppAnalyticsHubiOSTests;
-		};
-		66A2ED4F23CC448A00117100 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66A2ED4623CC428400117100 /* AppAnalyticsHubiOS.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 66A3AED023966FCD00F5A8EC;
-			remoteInfo = AppAnalyticsHubiOS;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		66A2ED2423CC408D00117100 /* AppAnalyticsHubSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppAnalyticsHubSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +25,6 @@
 		66A2ED3023CC408E00117100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66A2ED3323CC408E00117100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66A2ED3523CC408E00117100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		66A2ED4623CC428400117100 /* AppAnalyticsHubiOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppAnalyticsHubiOS.xcodeproj; path = ../library/AppAnalyticsHubiOS.xcodeproj; sourceTree = "<group>"; };
 		66A2ED5323CC455600117100 /* AppAnalyticsHubSample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppAnalyticsHubSample-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		75F41E76263962A993E896ED /* Pods-AppAnalyticsHubSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppAnalyticsHubSample.debug.xcconfig"; path = "Target Support Files/Pods-AppAnalyticsHubSample/Pods-AppAnalyticsHubSample.debug.xcconfig"; sourceTree = "<group>"; };
 		79DE852AB1DF37DFE0C38185 /* Pods-AppAnalyticsHubSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppAnalyticsHubSample.release.xcconfig"; path = "Target Support Files/Pods-AppAnalyticsHubSample/Pods-AppAnalyticsHubSample.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66A2ED5123CC448E00117100 /* libAppAnalyticsHubiOS.a in Frameworks */,
 				0179157A37A4CD331975D362 /* Pods_AppAnalyticsHubSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,18 +80,8 @@
 		66A2ED4523CC427900117100 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				66A2ED4623CC428400117100 /* AppAnalyticsHubiOS.xcodeproj */,
 			);
 			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		66A2ED4723CC428400117100 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				66A2ED4C23CC428400117100 /* libAppAnalyticsHubiOS.a */,
-				66A2ED4E23CC428400117100 /* AppAnalyticsHubiOSTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		A5447083495B0B62E44CD73E /* Frameworks */ = {
@@ -149,11 +112,11 @@
 				66A2ED2023CC408D00117100 /* Sources */,
 				66A2ED2123CC408D00117100 /* Frameworks */,
 				66A2ED2223CC408D00117100 /* Resources */,
+				3D6F26265E7667E41C115F32 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				66A2ED5023CC448A00117100 /* PBXTargetDependency */,
 			);
 			name = AppAnalyticsHubSample;
 			productName = AppAnalyticsHubSample;
@@ -186,35 +149,12 @@
 			mainGroup = 66A2ED1B23CC408D00117100;
 			productRefGroup = 66A2ED2523CC408D00117100 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 66A2ED4723CC428400117100 /* Products */;
-					ProjectRef = 66A2ED4623CC428400117100 /* AppAnalyticsHubiOS.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				66A2ED2323CC408D00117100 /* AppAnalyticsHubSample */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		66A2ED4C23CC428400117100 /* libAppAnalyticsHubiOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libAppAnalyticsHubiOS.a;
-			remoteRef = 66A2ED4B23CC428400117100 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		66A2ED4E23CC428400117100 /* AppAnalyticsHubiOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AppAnalyticsHubiOSTests.xctest;
-			remoteRef = 66A2ED4D23CC428400117100 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		66A2ED2223CC408D00117100 /* Resources */ = {
@@ -230,6 +170,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3D6F26265E7667E41C115F32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppAnalyticsHubSample/Pods-AppAnalyticsHubSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppAnalyticsHubSample/Pods-AppAnalyticsHubSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppAnalyticsHubSample/Pods-AppAnalyticsHubSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5A7B495A47399F378945EE53 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,14 +223,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		66A2ED5023CC448A00117100 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AppAnalyticsHubiOS;
-			targetProxy = 66A2ED4F23CC448A00117100 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		66A2ED2D23CC408D00117100 /* Main.storyboard */ = {
