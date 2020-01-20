@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "OCLint.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  The priority of an event. Classifies ranking of urgency between events.
 
@@ -25,8 +27,6 @@ typedef NS_ENUM(NSInteger, AppAnalyticsHubEventPriority) {
 typedef NSString * AppAnalyticsHubEventType NS_TYPED_EXTENSIBLE_ENUM NS_SWIFT_NAME(EventType);
 FOUNDATION_EXPORT OCLINT_SUPRESS AppAnalyticsHubEventType const AppAnalyticsHubEventTypeOperational;
 FOUNDATION_EXPORT OCLINT_SUPRESS AppAnalyticsHubEventType const AppAnalyticsHubEventTypeEngagement;
-
-NS_ASSUME_NONNULL_BEGIN
 
 /**
  An event aggregates data to be recorded in a collector.
