@@ -1,0 +1,46 @@
+
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.2'
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+    implementation 'com.amazon.appanalyticshub:appanalyticshub:0.0.1'
+    implementation 'com.facebook.react:react-native:+'
+}
+  

@@ -1,0 +1,78 @@
+{
+  "extends": ["tslint-config-prettier"],
+  "rules": {
+    "adjacent-overload-signatures": true,
+    "arrow-return-shorthand": [true],
+    "await-promise": true,
+    "class-name": true,
+    "comment-format": [true, "check-space"],
+    "completed-docs": [
+      true,
+      {
+        "enums": true,
+        "interfaces": { "visibilities": ["exported"] },
+        "functions": { "visibilities": ["exported"] },
+        "methods": {
+          "locations": ["static", "instance"],
+          "privacies": ["public", "protected"],
+          "tags": { "content": { "see": ["#.*"] }, "existence": ["inheritDoc"] }
+        },
+        "properties": {
+          "privacies": ["public", "protected"],
+          "tags": { "content": { "see": ["#.*"] }, "existence": ["inheritDoc"] }
+        }
+      }
+    ],
+    "curly": true,
+    "interface-name": true,
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          {
+            "name": "static non-private",
+            "kinds": [
+              "public-static-field",
+              "protected-static-field",
+              "public-static-method",
+              "protected-static-method"
+            ]
+          },
+          "private-instance-field",
+          "constructor"
+        ]
+      }
+    ],
+    "no-boolean-literal-compare": true,
+    "no-duplicate-super": true,
+    "no-empty": true,
+    "no-eval": true,
+    "no-floating-promises": true,
+    "no-internal-module": true,
+    "no-parameter-properties": true,
+    "no-parameter-reassignment": true,
+    "no-shadowed-variable": true,
+    "no-string-throw": true,
+    "no-switch-case-fall-through": true,
+    "no-unnecessary-callback-wrapper": true,
+    "no-unnecessary-type-assertion": true,
+    "no-unsafe-finally": true,
+    "no-unused-expression": true,
+    "no-var-keyword": true,
+    "one-variable-per-declaration": [true, "ignore-for-loop"],
+    "ordered-imports": true,
+    "prefer-const": true,
+    "switch-default": true,
+    "triple-equals": [true, "allow-null-check"],
+    "variable-name": [true, "ban-keywords"]
+  },
+  "jsRules": {
+    "class-name": true,
+    "comment-format": [true, "check-space"],
+    "no-duplicate-variable": true,
+    "no-eval": true,
+    "no-unsafe-finally": true,
+    "triple-equals": [true, "allow-null-check"],
+    "variable-name": [true, "ban-keywords"]
+  }
+}
