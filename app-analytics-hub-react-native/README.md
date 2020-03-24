@@ -1,4 +1,4 @@
-# react-native-app-analytics-hub-react-native
+# App Analytics Hub React Native
 
 ## Getting started
 
