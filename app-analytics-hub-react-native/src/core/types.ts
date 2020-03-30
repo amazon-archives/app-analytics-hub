@@ -186,19 +186,19 @@ export interface IEventData {
    * Limiting this as a string-string key-value pair as analytics
    * solutions accepts only strings.
    */
-  data: DataType;
+  readonly data: DataType;
   /**
    * Variable to store all the counter metrics linked to this Event.
    */
-  counters: TimersType;
+  readonly counters: TimersType;
   /**
    * Variable to store all the timer metrics linked to this Event.
    */
-  timers: CountersType;
+  readonly timers: CountersType;
   /**
    * Variable to store all the custom metrics linked to this Event.
    */
-  metrics: MetricsType;
+  readonly metrics: MetricsType;
 }
 
 /**
@@ -208,19 +208,19 @@ export interface IEventFactoryEventData {
   /**
    * The name of the event.
    */
-  name: string;
+  readonly name: string;
   /**
    * The source of the event.
    */
-  source?: string;
+  readonly source?: string;
   /**
    * The priority of this event. Optional, may be provided by factory.
    */
-  priority?: Priority;
+  readonly priority?: Priority;
   /**
    * The event type. Optional, may be provided by factory.
    */
-  eventType?: string | EventType;
+  readonly eventType?: string | EventType;
 }
 
 /**

@@ -12,7 +12,7 @@ export class AppAnalyticsHub implements IMetricsRecorder, ICollectorRegistry {
   constructor() {
     this.AppAnalyticsHubNativeModule = NativeModules.AppAnalyticsHub;
     if (this.AppAnalyticsHubNativeModule === undefined) {
-      console.log('Please integrate the AppAnalyticsHub native module.');
+      console.warn('Please integrate the AppAnalyticsHub native module.');
     }
   }
 
@@ -26,12 +26,9 @@ export class AppAnalyticsHub implements IMetricsRecorder, ICollectorRegistry {
     if (this.AppAnalyticsHubNativeModule != null) {
       this.AppAnalyticsHubNativeModule.recordEvent(event.getEventData());
     } else {
-      console.log(
-        `Event recorded is ${JSON.stringify(
-          event.getEventData(),
-          undefined,
-          2
-        )}`
+      console.warn(
+        `Please integrate the AppAnalyticsHub native module for event to be 
+        recorded.`
       );
     }
   }
@@ -53,8 +50,10 @@ export class AppAnalyticsHub implements IMetricsRecorder, ICollectorRegistry {
         collectorName
       );
     } else {
-      console.log(`${collectorName} collector is added to ${eventType} event
-      type`);
+      console.warn(
+        `Please integrate the AppAnalyticsHub native module to add 
+        ${collectorName} collector to ${eventType} event type`
+      );
     }
   }
 
@@ -75,8 +74,10 @@ export class AppAnalyticsHub implements IMetricsRecorder, ICollectorRegistry {
         collectorName
       );
     } else {
-      console.log(`${collectorName} collector is remove for ${eventType} event
-       type`);
+      console.warn(
+        `Please integrate the AppAnalyticsHub native module to 
+        remove ${collectorName} collector from ${eventType} event type`
+      );
     }
   }
 }

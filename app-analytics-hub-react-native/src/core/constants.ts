@@ -17,8 +17,6 @@ export const UNKNOWN_TYPE = 'UNKNOWN';
  * Priority is used as an indication of time sensitivity of a
  * Event. If the event collector has the functionality of priority then it would
  * be used.
- *
- * Currently exists DCM.
  */
 export enum Priority {
   /**

@@ -4,7 +4,7 @@
 
 `$ npm install app-analytics-hub --save`
 
-### Mostly automatic installation
+### Link for React native version < 0.60
 
 `$ react-native link app-analytics-hub`
 
