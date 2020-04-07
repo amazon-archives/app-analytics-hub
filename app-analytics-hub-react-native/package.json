@@ -1,0 +1,53 @@
+{
+  "name": "app-analytics-hub",
+  "version": "1.0.0",
+  "description": "This library allows you to instrument your code with operational and behavioral metrics in your react native applications.",
+  "main": "es5/index.js",
+  "types": "es5/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "precommit": "lint-staged",
+    "preparecommitmsg": "commit-template",
+    "clean": "rm -rf es6 && rm -rf build && rm -rf coverage",
+    "test": "jest --config jest.config.js",
+    "build": "tsc",
+    "format:test": "prettier --debug-check \"src/**/*.ts\" \"src/**/*.js\"",
+    "format:write": "prettier --write '**/*.{md,json}' '**/*.{js,jsx,ts,tsx}' '!.tmp/**'",
+    "format": "npm run format:test && npm run format:write",
+    "prepublishOnly": "npm run build",
+    "lint:files": "tslint --project tsconfig.json",
+    "lint": "tslint src/** && tslint tst/**",
+    "lint:fix": "tslint --fix src/** && tslint --fix tst/**",
+    "checkin": "npm run test && npm run build && npm run format:test && npm run lint"
+  },
+  "files": ["es5", "android", "ios", "AppAnalyticsHubReactNative.podspec"],
+  "lint-staged": {
+    "**/*.{ts,tsx}": ["tslint --project tslint-tsconfig.json"],
+    "**/*.{js,jsx,ts,tsx,json,css,md}": ["prettier --write", "git add"]
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.19",
+    "@types/prop-types": "^15.5.2",
+    "@types/react": "^16.8.3",
+    "@types/react-native": "^0.57.x",
+    "commit-template": "^1.0.0",
+    "jest": "^24.9.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
+    "react": "^16.8.3",
+    "react-native": "^0.61.5",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.1.6"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "@types/react": "^16.8.3",
+    "react-native": "^0.59.8",
+    "@types/react-native": "^0.57.x"
+  },
+  "dependencies": {}
+}

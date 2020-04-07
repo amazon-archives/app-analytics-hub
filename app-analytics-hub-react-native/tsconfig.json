@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": ["es2016", "es6", "es5", "dom"],
+    "declaration": true,
+    "target": "es5",
+    "module": "commonjs",
+    "jsx": "react",
+    // Raise error on expressions and declarations with an implied any type.
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    // Report errors for fallthrough cases in switch statement.
+    "noFallthroughCasesInSwitch": true,
+    // Report error when not all code paths in function return a value.
+    "noImplicitReturns": true,
+    // Raise error on this expressions with an implied any type.
+    "noImplicitThis": true,
+    // Report errors on unused locals.
+    "noUnusedLocals": true,
+    // Report errors on unused parameters.
+    "noUnusedParameters": true,
+    // Disable bivariant parameter checking for function types.
+    "strictFunctionTypes": true,
+    // Null and undefined values are not in the domain of every type and are only assignable to themselves and any
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    // enabled to skip annoying issue with @types/react-native conflict with @types/node
+    "skipLibCheck": true,
+    "outDir": "es5",
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "baseUrl": "."
+  },
+  "include": ["src/**/*", "tst/**/*"],
+  "exclude": ["build", "dist", "node_modules/**/*", "tst/**/*"]
+}
